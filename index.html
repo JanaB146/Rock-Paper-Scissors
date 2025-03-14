@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiel!</title>
+    <link rel="stylesheet" href="./paper.css">
+    <script src="./rock.js" defer></script>
+</head>
+<body>
+
+    <div class="anzeige" id="erster_block">
+        <h1>Rock Paper Scissors</h1>
+        <p><b>Regeln:</b> 3 Runden, Draw zählt nicht als Versuch.</p>
+        <h3 id="start" onclick="startGame();">Starte das Spiel mit einem Klick!</h3>
+    </div>
+
+    <div class="auswahlfeld"  id="choice">
+        <button onclick= "return checkInput();"><img src="./pics/Rock_Bubble.png" alt="rock"></button>
+        <button onclick= "return checkInput();"><img src="./pics/Paper_Bubble.png" alt="paper"></button>
+        <button onclick=" return checkInput();"><img src="./pics/Scissor_Bubble.png" alt="scissors"></button>
+    </div>
+
+    <div class="points">
+        COMPUTER <span id="computerPoints">0</span> /
+        <span id="playerPoints">0</span> PLAYER
+    </div>
+
+    <div id="result"><div></div>
+
+    <div class="ergebnisfeld" >
+        <img id="rotate" src="./pics/idle.gif">
+    </div>
+    
+</body>
+</html>

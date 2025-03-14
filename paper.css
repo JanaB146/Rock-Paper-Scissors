@@ -1,0 +1,63 @@
+body {
+    background-color: blueviolet;
+    display:flex;
+    flex-direction: column;
+}
+.anzeige {
+    border: solid grey 10px;
+    border-radius: 8px;
+    background-color: aliceblue;
+    display:flex;
+    flex-direction: column;
+    margin: 20px;
+}
+h1, p, h3{
+    align-self: center;
+    color:darkblue;
+}
+.auswahlfeld {
+    border:solid grey 15px;
+    display:flex;
+    background-color: rgb(188, 208, 225);
+    justify-content: space-evenly;
+}
+img {
+    margin:20px auto;
+}
+.ergebnisfeld {
+    height: 150px;
+    background-color: rgb(188, 208, 225);
+    border: solid grey 8px;
+    border-radius: 10px;
+    margin: 20px;
+    display:flex;
+    justify-content: space-around;
+}
+#rotate {
+    rotate: 180deg;
+}
+#start {
+    cursor:pointer;
+}
+#start:hover {
+    color:red;
+}
+.points {
+    margin: 2em 0;
+    text-align: center;
+}
+#computerPoints {
+    margin-left: 3em;
+}
+#playerPoints {
+    margin-right: 3em;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    border:solid black 2px;
+    border-radius: 8px;
+}
