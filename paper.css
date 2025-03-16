@@ -53,8 +53,8 @@ img {
     margin-right: 3em;
 }
 button {
+    border:solid transparent 2px;
     background: none;
-    border: none;
     cursor: pointer;
 }
 button:hover {
