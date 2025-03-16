@@ -24,7 +24,15 @@ h1, p, h3{
 img {
     margin:20px auto;
 }
-.ergebnisfeld {
+#result {
+    display: flex;
+    justify-content: space-around;
+}
+#ergebnis {
+    display: flex;
+    justify-content: space-around;
+}
+.ergebnisfeldEins, .ergebnisfeldZwei {
     height: 150px;
     background-color: rgb(188, 208, 225);
     border: solid grey 8px;
@@ -33,7 +41,7 @@ img {
     display:flex;
     justify-content: space-around;
 }
-#rotate {
+.rotate {
     rotate: 180deg;
 }
 #start {

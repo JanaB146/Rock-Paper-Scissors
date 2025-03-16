@@ -15,22 +15,27 @@
         <h3 id="start" onclick="startGame();">Starte das Spiel mit einem Klick!</h3>
     </div>
 
-    <div class="auswahlfeld"  id="choice">
-        <button type="button" id="rock" onclick= "return checkInput();"><img src="./pics/Rock_Bubble.png" alt="rock"></button>
-        <button type="button" id="paper" onclick= "return checkInput();"><img src="./pics/Paper_Bubble.png" alt="paper"></button>
-        <button type="button" id="scissors" onclick=" return checkInput();"><img src="./pics/Scissor_Bubble.png" alt="scissors"></button>
+    <div class="auswahlfeld"  id="playerschoice">
+        <button type="submit" id="rock"><img src="./pics/Rock_Bubble.png" alt="rock"></button>
+        <button type="submit" id="paper"><img src="./pics/Paper_Bubble.png" alt="paper"></button>
+        <button type="submit" id="scissors"><img src="./pics/Scissor_Bubble.png" alt="scissors"></button>
     </div>
 
     <div class="points">
         COMPUTER <span id="computerPoints">0</span> /
         <span id="playerPoints">0</span> PLAYER
     </div>
-
-    <div id="result"><div></div>
-
-    <div class="ergebnisfeld" >
-        <img id="rotate" src="./pics/idle.gif">
+    <div id="result"> </div>
+    <div id="ergebnis">
+        <div class="ergebnisfeldEins" >
+            <img id="eins" class="rotate" src="./pics/idle.gif">
+        </div>
+        <div class="ergebnisfeldZwei" >
+            <img id="zwei" src="./pics/idle.gif">
+        </div>
     </div>
+        
+    
     
 </body>
 </html>
