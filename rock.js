@@ -1,4 +1,4 @@
-let tries = 3;
+let round = 0;
 let playerPoints = 0;
 let computerPoints = 0;
 let computers_choice, players_choice, choices;
@@ -6,39 +6,46 @@ let computers_choice, players_choice, choices;
 
 function startGame() {
     document.getElementById("start").innerText = "Triff deine Wahl";
-    document.getElementById("result").innerText = ""; // Lösche vorheriges Ergebnis
+    document.getElementById("result").innerText = "";
 
-    tries = 3; // Setze Versuche zurück
-    playerPoints = 0; // Setze Spieler-Punkte zurück
-    computerPoints = 0; // Setze Computer-Punkte zurück
+    choices = ["rock", "paper", "scissors"];
+    computers_choice = Math.floor(Math.random() * 3);
+    computers_choice = choices[computers_choice];
+
+    round = 0;
+    playerPoints = 0;
+    computerPoints = 0;
     document.getElementById("playerPoints").innerText = playerPoints;
     document.getElementById("computerPoints").innerText = computerPoints;    
 }
-
 function checkInput(playerChoice) {
+    if (computers_choice == null) {
+        return;
+    }
+    if (round < 3) {
         players_choice = playerChoice;
-
         choices = ["rock", "paper", "scissors"];
         computers_choice = Math.floor(Math.random() * 3);
         computers_choice = choices[computers_choice];
 
         if (computers_choice === "rock") {
-            document.getElementById("eins").innerText = "Computer: Stein";
+            document.getElementById("eins").src = "./pics/Rock_Bubble.png";
         } else if (computers_choice === "paper") {
-            document.getElementById("eins").innerText = "Computer: Papier";
+            document.getElementById("eins").src = "./pics/Paper_Bubble.png";
         } else if (computers_choice === "scissors") {
-            document.getElementById("eins").innerText = "Computer: Schere";
+            document.getElementById("eins").src = "./pics/Scissor_Bubble.png";
         }
 
         if (players_choice === "rock") {
-            document.getElementById("zwei").innerText = "Player:Stein";
+            document.getElementById("zwei").src = "./pics/Rock_Bubble.png";
         } else if (players_choice === "paper") {
-            document.getElementById("zwei").innerText = "Player: Papier";
+            document.getElementById("zwei").src = "./pics/Paper_Bubble.png";
         } else if (players_choice === "scissors") {
-            document.getElementById("zwei").innerText = "Player: Schere";
+            document.getElementById("zwei").src = "./pics/Scissor_Bubble.png";
         }
-
+        
         let result = "";
+        
         if (players_choice === computers_choice) {
             result = "Unentschieden!";
         } else if (
@@ -46,35 +53,32 @@ function checkInput(playerChoice) {
             (players_choice === "paper" && computers_choice === "rock") ||
             (players_choice === "scissors" && computers_choice === "paper")
         ) {
-            result = "Du hast gewonnen!";
+            round += 1;
+            result = `Runde ${round}: Du hast gewonnen!`;
             playerPoints++;
+            
         } else {
-            result = "Du hast verloren!";
+            round += 1;
+            result = `Runde ${round}: Du hast verloren!`;
             computerPoints++;
         }
 
-        // Aktualisiere die Punktzahlen
         document.getElementById("playerPoints").innerText = playerPoints;
         document.getElementById("computerPoints").innerText = computerPoints;
 
-        // Zeige das Ergebnis
         document.getElementById("result").innerText = result;
-
-        // Wenn 3 Versuche vorbei sind, beende das Spiel
-        tries = tries - 1;
+        } else {
+            if (playerPoints > computerPoints) {
+            document.getElementById("result").innerText = "Glückwunsch. Du hast das Spiel gewonnen.";
+            }else {
+            document.getElementById("result").innerText = "Du hast gegen den Computer verloren.";
+            }
         }
-    if (tries <= 0) {
-        document.getElementById("start").innerText = "Spiel vorbei! Klicke, um neu zu starten.";
-        tries = 3; // Setze Versuche zurück
-        playerPoints = 0;
-        computerPoints = 0;
-        document.getElementById("playerPoints").innerText = playerPoints;
-        document.getElementById("computerPoints").innerText = computerPoints;
-    }
+    } 
+    document.getElementById("start").innerText = "Starte das Spiel";
 
-// Verbinde die Buttons mit den richtigen Aktionen
 document.getElementById("rock").onclick = function() { checkInput("rock"); };
 document.getElementById("paper").onclick = function() { checkInput("paper"); };
-document.getElementById("scissors").onclick = function() { checkInput("scissors"); 
+document.getElementById("scissors").onclick = function() { checkInput("scissors"); };
 
-};
+/*   */
