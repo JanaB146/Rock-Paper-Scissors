@@ -29,19 +29,19 @@ function checkInput(playerChoice) {
         computers_choice = choices[computers_choice];
 
         if (computers_choice === "rock") {
-            document.getElementById("eins").src = "./pics/Rock_Bubble.png";
+            document.getElementById("zwei").src = "./pics/Rock_Bubble.png";
         } else if (computers_choice === "paper") {
-            document.getElementById("eins").src = "./pics/Paper_Bubble.png";
+            document.getElementById("zwei").src = "./pics/Paper_Bubble.png";
         } else if (computers_choice === "scissors") {
-            document.getElementById("eins").src = "./pics/Scissor_Bubble.png";
+            document.getElementById("zwei").src = "./pics/Scissor_Bubble.png";
         }
 
         if (players_choice === "rock") {
-            document.getElementById("zwei").src = "./pics/Rock_Bubble.png";
+            document.getElementById("eins").src = "./pics/Rock_Bubble.png";
         } else if (players_choice === "paper") {
-            document.getElementById("zwei").src = "./pics/Paper_Bubble.png";
+            document.getElementById("eins").src = "./pics/Paper_Bubble.png";
         } else if (players_choice === "scissors") {
-            document.getElementById("zwei").src = "./pics/Scissor_Bubble.png";
+            document.getElementById("eins").src = "./pics/Scissor_Bubble.png";
         }
         
         let result = "";
@@ -75,10 +75,8 @@ function checkInput(playerChoice) {
             }
         }
     } 
-    document.getElementById("start").innerText = "Starte das Spiel";
+    document.getElementById("start").innerText = "Starte das Spiel mit einem Klick hier";
 
 document.getElementById("rock").onclick = function() { checkInput("rock"); };
 document.getElementById("paper").onclick = function() { checkInput("paper"); };
 document.getElementById("scissors").onclick = function() { checkInput("scissors"); };
-
-/*   */
