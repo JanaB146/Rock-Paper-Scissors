@@ -14,33 +14,37 @@
         <p><b>Regeln:</b> 3 Runden, Draw zählt nicht als Versuch.</p>
         <h3 id="start" onclick="startGame();">Starte das Spiel mit einem Klick!</h3>
     </div>
-
+    <div id="block">
+        <div class="auswahlfeld"  id="playerschoice">
+            <div id="choice">
+                <h2>Auswahl:</h2>
+                <button type="submit" id="rock"><img src="./pics/Rock_Bubble.png" alt="rock"></button>
+                <button type="submit" id="paper"><img src="./pics/Paper_Bubble.png" alt="paper"></button>
+                <button type="submit" id="scissors"><img src="./pics/Scissor_Bubble.png" alt="scissors"></button>
+            </div>
+        </div>
+        <div id="ergebnisfeld">
+            <div id="ergebnis">
+                <h2>Ergebnis:</h2>
+                <div class="points">
+                    COMPUTER <span id="computerPoints">0</span> /
+                    <span id="playerPoints">0</span> PLAYER
+                </div>
+                
+                <div class="ergebnisfeldEins" >
+                    <img id="eins" class="rotate" src="./pics/idle.gif">
+                </div>
+                <div id="result"></div>
+                <div class="ergebnisfeldZwei" >
+                    <img id="zwei" src="./pics/idle.gif">
+                </div>
+            </div>
+        </div>
+    </div>
     
-
-    <div class="points">
-        COMPUTER <span id="computerPoints">0</span> /
-        <span id="playerPoints">0</span> PLAYER
-    </div>
-    <div id="result"> </div>
-    <div id="ergebnis">
-        <div class="ergebnisfeldEins" >
-            <img id="eins" class="rotate" src="./pics/idle.gif">
-        </div>
-        <div class="ergebnisfeldZwei" >
-            <img id="zwei" src="./pics/idle.gif">
-        </div>
-    </div>
+    
         
-    <div class="auswahlfeld"  id="playerschoice">
-        <div>
-            <h2>Auswahl:</h2>
-        </div>
-        <div id="choice">
-            <button type="submit" id="rock"><img src="./pics/Rock_Bubble.png" alt="rock"></button>
-            <button type="submit" id="paper"><img src="./pics/Paper_Bubble.png" alt="paper"></button>
-            <button type="submit" id="scissors"><img src="./pics/Scissor_Bubble.png" alt="scissors"></button>
-        </div>
-    </div>
+    
     
 </body>
 </html>

@@ -54,12 +54,12 @@ function checkInput(playerChoice) {
             (players_choice === "scissors" && computers_choice === "paper")
         ) {
             round += 1;
-            result = `Runde ${round}: Du hast gewonnen!`;
+            result = `Runde ${round}: Gewonnen!`;
             playerPoints++;
             
         } else {
             round += 1;
-            result = `Runde ${round}: Du hast verloren!`;
+            result = `Runde ${round}: Verloren!`;
             computerPoints++;
         }
 
@@ -70,9 +70,12 @@ function checkInput(playerChoice) {
         } else {
             if (playerPoints > computerPoints) {
             document.getElementById("result").innerText = "Glückwunsch. Du hast das Spiel gewonnen.";
+
             }else {
             document.getElementById("result").innerText = "Du hast gegen den Computer verloren.";
             }
+            document.getElementById("zwei").src = "./pics/idle.gif";
+            document.getElementById("eins").src = "./pics/idle.gif";
         }
     } 
     document.getElementById("start").innerText = "Starte das Spiel mit einem Klick hier";
