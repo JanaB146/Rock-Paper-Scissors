@@ -1,7 +1,7 @@
 let round = 0;
 let playerPoints = 0;
 let computerPoints = 0;
-let computers_choice, players_choice, choices;
+let computers_choice, players_choice, choices, timeout;
 
 
 function startGame() {
@@ -45,7 +45,7 @@ function checkInput(playerChoice) {
         }
         
         let result = "";
-        
+
         if (players_choice === computers_choice) {
             result = "Unentschieden!";
         } else if (
@@ -62,6 +62,11 @@ function checkInput(playerChoice) {
             result = `Runde ${round}: Verloren!`;
             computerPoints++;
         }
+        setTimeout(() => {
+            document.getElementById("eins").src = "./pics/idle.gif";
+            document.getElementById("zwei").src = "./pics/idle.gif";
+            result = ""
+        }, 2000);
 
         document.getElementById("playerPoints").innerText = playerPoints;
         document.getElementById("computerPoints").innerText = computerPoints;
